@@ -1,2 +1,4 @@
-# slim-template
-Plantilla de API con php y el microframework slim
+# Proyecto: plantilla
+
+Estructura básica para una API php
+
