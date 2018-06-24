@@ -5,7 +5,7 @@
     "project template", "api template", "fryntiz"],
   "homepage": "http://fryntiz.es",
   "type": "project",
-  "license": "GPLv3",
+  "license": "GPL-3.0-only",
   "require": {
     "php": "^7.0.0",
     "slim/slim": "^3.10",
