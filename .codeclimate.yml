@@ -18,7 +18,7 @@ engines:
   phpmd:
     enabled: true
     config:
-      rulesets: "codesize,design,unusedcode,phpmd.xml"
+      rulesets: "codesize,design,unusedcode"
 ratings:
   paths:
   - "**.js"
