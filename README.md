@@ -10,6 +10,10 @@ Ruta del paquete en packagist:
 
 https://packagist.org/packages/fryntiz/api-slim-template
 
+Ruta del repositorio para el desarrollo:
+
+https://github.com/fryntiz/slim-template.git
+
 ## Instalación
 
 Para instalar esta plantilla desde packagist será necesario tener  composer.
