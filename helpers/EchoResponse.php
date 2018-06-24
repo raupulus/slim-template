@@ -22,7 +22,7 @@ class EchoResponse
      * @param []  $response Contenido de la respuesta
      * @param int $status_code Código de respuesta HTTP
      */
-    static public function response($response, $status_code = 200)
+    public static function response($response, $status_code = 200)
     {
         //$app = Slim\Slim::getInstance();
 

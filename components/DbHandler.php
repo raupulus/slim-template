@@ -12,12 +12,12 @@ class DbHandler
 {
     private $cnx;
  
-    function __construct($conf)
+    public function __construct($conf)
     {
         $db = new DbConnect($conf);
         $this->cnx = $db->connect();
     }
- 
+
     public function create($array)
     {
         // Lógica para create
@@ -42,6 +42,5 @@ class DbHandler
     {
         // Lógica para delete
     }
-
 }
  

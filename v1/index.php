@@ -19,12 +19,12 @@ header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
 require '../index.php';
 
 use app\helpers\EchoResponse;
-//use app\components\DbConnect;
-//use app\components\DbHandler;
+use app\components\DbConnect;
+use app\components\DbHandler;
 
 
 /* Usando GET para consultar un usuario */
-$app->get('/user/{id}', function($request, $response, $args) {
+$app->get('/user/{id}', function ($request, $response, $args) {
     $user_id = (int)$args['id'];
     $response = [];
 
@@ -42,7 +42,7 @@ $app->get('/user/{id}', function($request, $response, $args) {
 });
 
 /* Usando GET para consultar todos los usuarios */
-$app->get('/users', function() {
+$app->get('/users', function () {
     $response = [];
 
     // Emulando datos que se obtendrían con DBHandler

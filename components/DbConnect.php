@@ -8,12 +8,13 @@
 
 namespace app\components;
 
+use PDOException;
+
 class DbConnect
 {
- 
     private $cnx;
  
-    function __construct($conf) {
+    public function __construct($conf) {
         $this->config = $conf;
     }
 
@@ -21,7 +22,7 @@ class DbConnect
      * Establishing connection with database
      * @return PDO Handler for PDO is return.
      */
-    function connect() {
+    public function connect() {
         try {
             $this->cnx = new PDO(
                 $this->config['dsn'].';charset='.$this->config['dsn'],
@@ -32,21 +33,16 @@ class DbConnect
             $this->cnx->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->cnx->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
-            // Return PDO Connection
             return $this->cnx;
-
         } catch(PDOException $ex) {
-
             // if the environment is development, show error details, otherwise show generic message
-            if ( (defined('ENVIRONMENT')) && (ENVIRONMENT == 'development') ) {
+            if ((defined('ENVIRONMENT')) && (ENVIRONMENT == 'development')) {
                 echo 'An error occured connecting to the database! Details: ' . $ex->getMessage();
             } else {
                 echo 'An error occured connecting to the database!';
             }
             exit;
         }
-        
     }
- 
 }
 ?>
