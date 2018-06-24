@@ -43,4 +43,3 @@ class DbHandler
         // Lógica para delete
     }
 }
- 

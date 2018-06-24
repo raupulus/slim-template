@@ -22,7 +22,6 @@ use app\helpers\EchoResponse;
 use app\components\DbConnect;
 use app\components\DbHandler;
 
-
 /* Usando GET para consultar un usuario */
 $app->get('/user/{id}', function ($request, $response, $args) {
     $user_id = (int)$args['id'];

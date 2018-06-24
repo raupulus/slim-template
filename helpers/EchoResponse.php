@@ -57,5 +57,4 @@ class EchoResponse
 422 	Unprocessable Entity
 500 	Internal Server Error
 */
-?>
 
