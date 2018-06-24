@@ -1,5 +1,5 @@
 {
-  "name": "fryntiz/php-api-template",
+  "name": "fryntiz/api-slim-template",
   "description": "API php template basic",
   "keywords": ["json", "api", "php",
     "project template", "api template", "fryntiz"],
