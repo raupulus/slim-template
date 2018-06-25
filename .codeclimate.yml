@@ -27,4 +27,5 @@ exclude_paths:
 - tmp/
 - tests/
 - docs/
+- vendor/
 - v1/index-examples.php
