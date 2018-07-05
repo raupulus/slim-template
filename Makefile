@@ -1,7 +1,7 @@
-.PHONY: all test tests install db psql clean permisos perm p requeriments \
-	req dbfull dbh dbheroku
+.PHONY: all test tests install db dbload psql clean permisos perm p \
+requeriments req dbf dbfull dbh dbheroku dbc dbcreate apache
 
-all: requeriments install db permisos
+all: requeriments install dbfull permisos
 
 test tests:
 	tests/main.sh
@@ -10,12 +10,13 @@ install:
 	composer install
 	composer run-script post-create-project-cmd
 
-db:
+db dbload:
 	db/load.sh
 
-dbfull:
+dbc dbcreate:
 	db/create.sh
-	db/load.sh
+
+dbf dbfull: dbcreate dbload
 
 dbh dbheroku:
 	heroku psql < db/plantilla.sql
@@ -30,10 +31,13 @@ clean:
 
 permisos perm p:
 	echo 'Aplicando permisos para desarrollo. No usar en producción, son inseguros'
-	sudo chmod -R 750 .
+	sudo chmod -R 760 .
 	sudo chmod -R 775 v1
 	sudo chmod -R 777 tmp/*
 	bash -c 'yo=$(shell whoami) && sudo chown -R $${yo}:www-data .'
 
 requeriments req:
 	echo 'Instalando dependencias'
+
+apache:
+	./desplegar.sh
