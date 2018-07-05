@@ -13,7 +13,7 @@ PROYECT_NAME="$(echo $DIR | tr -d ' ' \
                           #| tr -cs '[:alnum:]' '_') \
 )"
 sed -i s/plantilla/$PROYECT_NAME/g db/* config/* apache.conf \
-    Makefile CITATION.txt README.md LICENSE
+    Makefile CITATION.txt README.md LICENSE despliegue.sh
 
 mv 'apache.conf' "$PROYECT_NAME.conf"
 mv 'db/plantilla.sql' "db/$PROYECT_NAME.sql"
